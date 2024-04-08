@@ -1,0 +1,22 @@
+import * as admin from "firebase-admin";
+import {User} from "./user.model";
+
+export const addUser = async (userData: Omit<User, "id" | "createdAt">) => {
+    try {
+        const db = admin.firestore();
+
+        const data = {
+            ...userData,
+            createdAt: new Date(),
+        };
+
+        const userRef = await db.collection("superfrete").add(data);
+
+        return {
+            id: userRef.id,
+            ...data,
+        };
+    } catch (error) {
+        throw new Error("Firestore not working");
+    }
+};
