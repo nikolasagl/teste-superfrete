@@ -10,7 +10,7 @@ export const addUser = async (userData: Omit<User, "id" | "createdAt">) => {
             createdAt: new Date(),
         };
 
-        const userRef = await db.collection("superfrete").add(data);
+        const userRef = await db.collection("users").add(data);
 
         return {
             id: userRef.id,
