@@ -30,5 +30,6 @@ module.exports = {
         "indent": ["error", 4],
         "linebreak-style": ["error", "unix"],
         "max-len": ["error", 200],
+        "@typescript-eslint/no-var-requires": "off",
     },
 };

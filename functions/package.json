@@ -20,7 +20,8 @@
     "testEnvironment": "node",
     "moduleNameMapper": {
       "^@users/(.*)$": "<rootDir>/src/users/$1"
-    }
+    },
+    "testPathIgnorePatterns": ["/node_modules/", "/lib/"]
   },
   "dependencies": {
     "express": "^4.19.2",
