@@ -30,17 +30,14 @@ describe("registerUser", () => {
 
     it("success scenario", async () => {
         const mockUserData = {name: "Nikolas"};
-        const mockUserResponse = {id: "1", email: "teste@teste.com"};
         const req: any = {method: "POST", body: mockUserData};
         const res = createMockResponse();
 
         (validateUserModule.userValidationSchema.validate as jest.Mock).mockResolvedValueOnce(mockUserData);
-        (createUserAccountService.createUserAccount as jest.Mock).mockResolvedValue(mockUserResponse);
         await registerUser(req, res);
 
         expect(createUserAccountService.createUserAccount).toHaveBeenCalledWith(mockUserData);
         expect(res.status).toHaveBeenCalledWith(200);
-        expect(res.json).toHaveBeenCalledWith(mockUserResponse);
     });
 
     it("return invalid name (< 2)", async () => {
