@@ -1,6 +1,7 @@
 import * as admin from "firebase-admin";
-import {createUser, userOnCreate} from "./users/index";
+import {registerUser, userOnCreate} from "./users/index";
+require("module-alias/register");
 
 admin.initializeApp();
 
-export {createUser, userOnCreate};
+export {registerUser, userOnCreate};

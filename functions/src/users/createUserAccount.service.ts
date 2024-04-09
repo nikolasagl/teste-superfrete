@@ -1,7 +1,7 @@
 import * as admin from "firebase-admin";
 import {User} from "./user.model";
 
-export const addUser = async (userData: Omit<User, "id" | "createdAt">) => {
+export const createUserAccount = async (userData: Omit<User, "id" | "createdAt">) => {
     try {
         const db = admin.firestore();
 

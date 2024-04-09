@@ -17,7 +17,10 @@
   "main": "lib/index.js",
   "jest": {
     "preset": "ts-jest",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^@users/(.*)$": "<rootDir>/src/users/$1"
+    }
   },
   "dependencies": {
     "express": "^4.19.2",

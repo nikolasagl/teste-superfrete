@@ -1,4 +1,4 @@
-import {createUser} from "./user.create";
-import {userOnCreate} from "./user.onCreate";
+import {registerUser} from "./registerUser.function";
+import {userOnCreate} from "./userOnCreate.function";
 
-export {createUser, userOnCreate};
+export {registerUser, userOnCreate};

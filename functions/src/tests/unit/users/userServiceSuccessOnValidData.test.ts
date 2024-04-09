@@ -1,5 +1,5 @@
-import {addUser} from "../../../src/users/user.service";
-import {User} from "../../../src/users/user.model";
+import {createUserAccount} from "@users/createUserAccount.service";
+import {User} from "@users/user.model";
 
 jest.mock("firebase-admin", () => {
     const firestore = jest.fn(() => ({
@@ -11,13 +11,13 @@ jest.mock("firebase-admin", () => {
     return {firestore, initializeApp: jest.fn()};
 });
 
-describe("addUser function", () => {
-    describe("Success scenarios", () => {
+describe("createUserAccount function", () => {
+    describe("success scenarios", () => {
         it("should add a user and return user data with id for valid user data", async () => {
             const userData: Omit<User, "id" | "createdAt"> = {
                 name: "teste 123",
             };
-            const result = await addUser(userData);
+            const result = await createUserAccount(userData);
 
             expect(result).toHaveProperty("id", "asjdakdasdjsad");
             expect(result).toHaveProperty("name", "teste 123");
