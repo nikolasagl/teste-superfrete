@@ -31,5 +31,6 @@ module.exports = {
         "linebreak-style": ["error", "unix"],
         "max-len": ["error", 200],
         "@typescript-eslint/no-var-requires": "off",
+        "require-jsdoc": "off",
     },
 };
