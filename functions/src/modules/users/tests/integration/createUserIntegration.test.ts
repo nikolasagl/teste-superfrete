@@ -20,12 +20,12 @@ admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
 });
 
-if (process.env.USE_FIRESTORE_EMULATOR === "true") {
-    admin.firestore().settings({
-        host: "localhost:8080",
-        ssl: false,
-    });
-}
+// if (process.env.USE_FIRESTORE_EMULATOR === "true") {
+//     admin.firestore().settings({
+//         host: "localhost:8080",
+//         ssl: false,
+//     });
+// }
 
 const testApp = express();
 testApp.use(express.json());
@@ -34,26 +34,26 @@ testApp.post("/registerUser", registerUser);
 const request = supertest(testApp);
 
 describe("registerUser Firebase Function", () => {
-    // async function clearTestData() {
-    //     const users = await admin.firestore().collection("users").get();
-    //     users.forEach(async (user) => {
-    //         await admin.firestore().collection("users").doc(user.id).delete();
-    //     });
-    // }
+    async function clearTestData() {
+        const users = await admin.firestore().collection("users").get();
+        users.forEach(async (user) => {
+            await admin.firestore().collection("users").doc(user.id).delete();
+        });
+    }
 
-    // beforeEach(async () => {
-    //     await clearTestData();
-    // });
+    beforeEach(async () => {
+        await clearTestData();
+    });
 
-    // afterAll(async () => {
-    //     await clearTestData();
-    //     await admin.app().delete();
-    // });
+    afterAll(async () => {
+        await clearTestData();
+        await admin.app().delete();
+    });
 
     it("should register a user successfully and assign an incrementId", async () => {
         const mockUserData = {name: "John Doe"};
         const response = await request.post("/registerUser").send(mockUserData).expect(200);
 
         expect(response.body).toHaveProperty("id");
-    }, 60000);
+    }, 10000);
 });
