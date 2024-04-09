@@ -20,10 +20,10 @@ admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
 });
 
-if (process.env.USE_FIRESTORE_EMULATOR === 'true') {
+if (process.env.USE_FIRESTORE_EMULATOR === "true") {
     admin.firestore().settings({
         host: "localhost:8080",
-        ssl: false
+        ssl: false,
     });
 }
 
