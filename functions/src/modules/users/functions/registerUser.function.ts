@@ -1,5 +1,5 @@
 import {onRequest} from "firebase-functions/v2/https";
-import {userValidationSchema} from "../../../shared/middleware/validateUser";
+import {userValidationSchema} from "../shared/middleware/validateUser";
 import {createUserAccount} from "../services/createUserAccount.service";
 import * as yup from "yup";
 

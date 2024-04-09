@@ -9,8 +9,19 @@
     "target": "es2017",
     "baseUrl": ".",
     "paths": {
-      "@users/*": ["src/modules/users/*"],
-      "@shared/*": ["src/shared/*"],
+    "@functions/*": ["src/*"],
+    "@modules/*": ["src/modules/*"],
+    "@users/*": ["src/modules/users/*"],
+    "@userServices/*": ["src/modules/users/services/*"],
+    "@userFunctions/*": ["src/modules/users/functions/*"],
+    "@userModels/*": ["src/modules/users/models/*"],
+    "@userShared/*": ["src/modules/users/shared/*"],
+    "@userMiddleware/*": ["src/modules/users/shared/middleware/*"],
+    "@userTests/*": ["src/modules/users/tests/*"],
+    "@userIntegrationTests/*": ["src/modules/users/tests/integration/*"],
+    "@userUnitTests/*": ["src/modules/users/tests/unit/*"],
+    "@shared/*": ["src/shared/*"],
+    "@sharedMiddleware/*": ["src/modules/users/shared/middleware/*"]
     }
   },
   "compileOnSave": true,

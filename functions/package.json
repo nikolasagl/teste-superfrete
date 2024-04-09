@@ -19,7 +19,19 @@
     "preset": "ts-jest",
     "testEnvironment": "node",
     "moduleNameMapper": {
-      "^@users/(.*)$": "<rootDir>/src/users/$1"
+      "^@functions/(.*)$": "<rootDir>/src/$1",
+      "^@modules/(.*)$": "<rootDir>/src/modules/$1",
+      "^@users/(.*)$": "<rootDir>/src/modules/users/$1",
+      "^@userServices/(.*)$": "<rootDir>/src/modules/users/services/$1",
+      "^@userFunctions/(.*)$": "<rootDir>/src/modules/users/functions/$1",
+      "^@userModels/(.*)$": "<rootDir>/src/modules/users/models/$1",
+      "^@userShared/(.*)$": "<rootDir>/src/modules/users/shared/$1",
+      "^@userMiddleware/(.*)$": "<rootDir>/src/modules/users/shared/middleware/$1",
+      "^@userTests/(.*)$": "<rootDir>/src/modules/users/tests/$1",
+      "^@userIntegrationTests/(.*)$": "<rootDir>/src/modules/users/tests/integration/$1",
+      "^@userUnitTests/(.*)$": "<rootDir>/src/modules/users/tests/unit/$1",
+      "^@shared/(.*)$": "<rootDir>/src/shared/$1",
+      "^@sharedMiddleware/(.*)$": "<rootDir>/src/shared/middleware/$1"
     },
     "testPathIgnorePatterns": [
       "/node_modules/",

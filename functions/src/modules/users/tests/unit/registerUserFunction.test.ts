@@ -1,10 +1,10 @@
-import {registerUser} from "../../functions/registerUser.function";
-import * as validateUserModule from "../../../../shared/middleware/validateUser";
-import * as createUserAccountService from "../../services/createUserAccount.service";
+import {registerUser} from "@userFunctions/registerUser.function";
+import * as validateUserModule from "@userMiddleware/validateUser";
+import * as createUserAccountService from "@userServices/createUserAccount.service";
 import * as yup from "yup";
 
-jest.mock("../../../shared/middleware/validateUser");
-jest.mock("../../../users/createUserAccount.service");
+jest.mock("../../shared/middleware/validateUser");
+jest.mock("../../services/createUserAccount.service");
 
 const createMockResponse = () => {
     const res: any = {};
