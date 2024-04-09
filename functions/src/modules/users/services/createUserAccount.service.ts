@@ -1,5 +1,5 @@
 import * as admin from "firebase-admin";
-import {User} from "./user.model";
+import {User} from "../models/user.model";
 
 export const createUserAccount = async (userData: Omit<User, "id" | "createdAt">) => {
     try {

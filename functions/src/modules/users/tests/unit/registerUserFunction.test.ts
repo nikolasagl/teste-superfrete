@@ -1,6 +1,6 @@
-import {registerUser} from "../../../users/registerUser.function";
-import * as validateUserModule from "../../../shared/middleware/validateUser";
-import * as createUserAccountService from "../../../users/createUserAccount.service";
+import {registerUser} from "../../functions/registerUser.function";
+import * as validateUserModule from "../../../../shared/middleware/validateUser";
+import * as createUserAccountService from "../../services/createUserAccount.service";
 import * as yup from "yup";
 
 jest.mock("../../../shared/middleware/validateUser");

@@ -1,5 +1,5 @@
-import {createUserAccount} from "@users/createUserAccount.service";
-import {User} from "@users/user.model";
+import {createUserAccount} from "@users/services/createUserAccount.service";
+import {User} from "@users/models/user.model";
 
 jest.mock("firebase-admin", () => ({
     firestore: jest.fn(),

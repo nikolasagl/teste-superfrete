@@ -1,6 +1,6 @@
 import {onRequest} from "firebase-functions/v2/https";
-import {userValidationSchema} from "../shared/middleware/validateUser";
-import {createUserAccount} from "./createUserAccount.service";
+import {userValidationSchema} from "../../../shared/middleware/validateUser";
+import {createUserAccount} from "../services/createUserAccount.service";
 import * as yup from "yup";
 
 export const registerUser = onRequest(async (request, response) => {

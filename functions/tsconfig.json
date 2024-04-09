@@ -9,9 +9,8 @@
     "target": "es2017",
     "baseUrl": ".",
     "paths": {
-      "@users/*": ["src/users/*"],
+      "@users/*": ["src/modules/users/*"],
       "@shared/*": ["src/shared/*"],
-      "@middleware/*": ["src/shared/middleware/*"]
     }
   },
   "compileOnSave": true,
