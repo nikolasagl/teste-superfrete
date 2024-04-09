@@ -19,6 +19,11 @@ jobs:
       run: npm install
       working-directory: ./functions
 
+    - name: Set Environment Variables
+      run: |
+        echo "NODE_ENV=production" >> $GITHUB_ENV
+        echo "FIREBASE_SERVICE_ACCOUNT_BASE64=${{ secrets.FIREBASE_SERVICE_ACCOUNT_BASE64 }}" >> $GITHUB_ENV
+
     - name: Start Firebase Emulators in Background
       run: firebase emulators:start --only firestore &
       working-directory: .
