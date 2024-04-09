@@ -10,7 +10,8 @@
     "baseUrl": ".",
     "paths": {
       "@users/*": ["src/users/*"],
-      "@shared/*": ["src/shared/*"]
+      "@shared/*": ["src/shared/*"],
+      "@middleware/*": ["src/shared/middleware/*"]
     }
   },
   "compileOnSave": true,
