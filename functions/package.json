@@ -10,7 +10,7 @@
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
     "test": "jest --detectOpenHandles",
-    "test:ci": "USE_FIRESTORE_EMULATOR=true jest"
+    "test:ci": "USE_FIRESTORE_EMULATOR=true jest --detectOpenHandles"
   },
   "engines": {
     "node": "20"
