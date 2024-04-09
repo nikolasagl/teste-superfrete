@@ -38,7 +38,7 @@ jobs:
       working-directory: ./functions
 
     - name: Testing
-      run: npm run test
+      run: npm run test:ci
       working-directory: ./functions
 
     - name: Building

@@ -20,13 +20,12 @@ admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
 });
 
-// if (process.env.NODE_ENV === "development") {
-const db = admin.firestore();
-db.settings({
-    host: "localhost:8080",
-    ssl: false,
-});
-// }
+if (process.env.USE_FIRESTORE_EMULATOR === 'true') {
+    admin.firestore().settings({
+        host: "localhost:8080",
+        ssl: false
+    });
+}
 
 const testApp = express();
 testApp.use(express.json());
