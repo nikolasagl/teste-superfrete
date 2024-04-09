@@ -25,7 +25,6 @@ jobs:
 
     - name: Testing
       run: npm run test
-      working-directory: ./
 
     - name: Building
       run: npm run build
