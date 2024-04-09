@@ -13,6 +13,6 @@ export const registerUser = onRequest(async (request, response) => {
         if (error instanceof Error) {
             response.status(500).send(`Erro ao receber request: ${error.message}`);
         }
-        response.status(500).send("Erro desconhecido ao receber request");
+        response.status(500).send("Erro desconhecido ao receber request.");
     }
 });
