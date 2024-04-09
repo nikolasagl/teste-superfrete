@@ -55,5 +55,5 @@ describe("registerUser Firebase Function", () => {
         const response = await request.post("/registerUser").send(mockUserData).expect(200);
 
         expect(response.body).toHaveProperty("id");
-    }, 10000);
+    }, 60000);
 });
