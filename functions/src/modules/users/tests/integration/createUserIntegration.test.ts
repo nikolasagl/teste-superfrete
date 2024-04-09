@@ -4,16 +4,6 @@ import {registerUser} from "@userFunctions/registerUser.function";
 const express = require("express");
 const supertest = require("supertest");
 
-// const serviceAccount = require("../../../../../../../teste-superfrete/service-account-file.json");
-
-// const serviceAccountBase64 = process.env.FIREBASE_SERVICE_ACCOUNT_BASE64;
-
-// if (!serviceAccountBase64) {
-//     throw new Error("The environment variable FIREBASE_SERVICE_ACCOUNT_BASE64 is not set.");
-// }
-
-// const serviceAccount = JSON.parse(Buffer.from(serviceAccountBase64, "base64").toString("ascii"));
-
 let serviceAccount;
 
 if (process.env.NODE_ENV === "production") {
@@ -23,13 +13,20 @@ if (process.env.NODE_ENV === "production") {
     }
     serviceAccount = JSON.parse(Buffer.from(serviceAccountBase64, "base64").toString("ascii"));
 } else {
-    // Em desenvolvimento local, importe diretamente o arquivo JSON da conta de serviço
     serviceAccount = require("../../../../../../../teste-superfrete/service-account-file.json");
 }
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
 });
+
+if (process.env.NODE_ENV === "development") {
+    const db = admin.firestore();
+    db.settings({
+        host: "http://127.0.0.1:8080",
+        ssl: false,
+    });
+}
 
 const testApp = express();
 testApp.use(express.json());
