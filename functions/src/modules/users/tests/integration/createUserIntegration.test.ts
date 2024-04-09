@@ -16,21 +16,21 @@ testApp.post("/registerUser", registerUser);
 const request = supertest(testApp);
 
 describe("registerUser Firebase Function", () => {
-    async function clearTestData() {
-        const users = await admin.firestore().collection("users").get();
-        users.forEach(async (user) => {
-            await admin.firestore().collection("users").doc(user.id).delete();
-        });
-    }
+    // async function clearTestData() {
+    //     const users = await admin.firestore().collection("users").get();
+    //     users.forEach(async (user) => {
+    //         await admin.firestore().collection("users").doc(user.id).delete();
+    //     });
+    // }
 
-    beforeEach(async () => {
-        await clearTestData();
-    });
+    // beforeEach(async () => {
+    //     await clearTestData();
+    // });
 
-    afterAll(async () => {
-        await clearTestData();
-        await admin.app().delete();
-    });
+    // afterAll(async () => {
+    //     await clearTestData();
+    //     await admin.app().delete();
+    // });
 
     it("should register a user successfully and assign an incrementId", async () => {
         const mockUserData = {name: "John Doe"};

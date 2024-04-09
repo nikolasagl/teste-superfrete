@@ -19,12 +19,22 @@ jobs:
       run: npm install
       working-directory: ./functions
 
+    - name: Start Firebase Emulators in Background
+      run: firebase emulators:start --only firestore &
+      working-directory: .
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        
+    - name: Wait for Emulators to Start
+      run: sleep 15
+
     - name: Linting
       run: npm run lint
       working-directory: ./functions
 
     - name: Testing
       run: npm run test
+      working-directory: ./functions
 
     - name: Building
       run: npm run build
