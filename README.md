@@ -2,7 +2,7 @@
 
 # Firebase Functions and Firestore Application
 
-This repository contains a Firebase Functions and Firestore application with Continuous Integration and Continuous Deployment (CI/CD) set up using GitHub Actions. The application is tested using Jest for both unit and integration tests.
+This repository contains a Firebase Functions and Firestore application with Continuous Integration and Continuous Deployment (CI/CD) set up using GitHub Actions. The application is tested using Jest and Supertest for both unit and integration tests.
 
 ## Architecture
 
@@ -22,7 +22,6 @@ The application follows a modular architecture, with separate modules for functi
                     - **integration**: Integration tests for user module.
                     - **unit**: Unit tests for user module.
         - **shared**: Contains shared utilities used across different modules.
-            - **middleware**: Shared middleware functions used across different Firebase functions.
     - `index.ts`: Main entry point for Firebase Functions.
 - `tsconfig.json`: TypeScript configuration file.
 - `package.json`: Node.js package configuration file.
@@ -79,15 +78,17 @@ npm run test
 npm run build
 ```
 
+9. Build:
+
+```bash
+Make sure Java is installed and configured in your PATH
+```
+
 9. Run Firebase emulators:
 
 ```bash
 firebase emulators:start
 ```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a pull request with any improvements or additional features.
 
 ## License
 
