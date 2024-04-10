@@ -42,16 +42,16 @@ git clone https://github.com/nikolasagl/teste-superfrete.git
 cd teste-superfrete
 ```
 
-3. Install dependencies:
-
-```bash
-npm install
-```
-
-4. Configure .env file:
+3. Configure .env file:
 
 ```bash
 Paste the ".env" file inside root directory
+```
+
+4. Install dependencies:
+
+```bash
+npm install
 ```
 
 5. Set up Firebase CLI:
@@ -60,25 +60,19 @@ Paste the ".env" file inside root directory
 npm install -g firebase-tools
 ```
 
-6. Run lint:
-
-```bash
-npm run lint
-```
-
-7. Run tests:
+6. Run tests:
 
 ```bash
 npm run test
 ```
 
-8. Build:
+7. Run Build:
 
 ```bash
 npm run build
 ```
 
-9. Build:
+8. Remember Java:
 
 ```bash
 Make sure Java is installed and configured in your PATH
