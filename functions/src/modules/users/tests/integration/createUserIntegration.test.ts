@@ -5,9 +5,9 @@ require("dotenv").config();
 const express = require("express");
 const supertest = require("supertest");
 
-const serviceAccountBase64 = process.env.FIREBASE_SERVICE_ACCOUNT_BASE64;
+const serviceAccountBase64 = process.env.SERVICE_ACCOUNT_BASE64;
 if (!serviceAccountBase64) {
-    throw new Error("The environment variable FIREBASE_SERVICE_ACCOUNT_BASE64 is not set.");
+    throw new Error("The environment variable SERVICE_ACCOUNT_BASE64 is not set.");
 }
 const serviceAccount = JSON.parse(Buffer.from(serviceAccountBase64, "base64").toString("ascii"));
 

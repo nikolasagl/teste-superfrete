@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "lib",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2017",
+    "baseUrl": ".",
+    "paths": {
+      "@functions/*": ["functions/src/*"],
+      "@modules/*": ["functions/src/modules/*"],
+      "@users/*": ["functions/src/modules/users/*"],
+      "@userServices/*": ["functions/src/modules/users/services/*"],
+      "@userFunctions/*": ["functions/src/modules/users/functions/*"],
+      "@userModels/*": ["functions/src/modules/users/models/*"],
+      "@userShared/*": ["functions/src/modules/users/shared/*"],
+      "@userMiddleware/*": ["functions/src/modules/users/shared/middleware/*"],
+      "@userTests/*": ["functions/src/modules/users/tests/*"],
+      "@userIntegrationTests/*": ["functions/src/modules/users/tests/integration/*"],
+      "@userUnitTests/*": ["functions/src/modules/users/tests/unit/*"],
+      "@shared/*": ["functions/src/shared/*"],
+      "@sharedMiddleware/*": ["functions/src/modules/users/shared/middleware/*"]
+    }
+  },
+  "compileOnSave": true,
+  "include": [
+    "functions/src"
+  ]
+}
