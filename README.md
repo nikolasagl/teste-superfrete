@@ -37,10 +37,10 @@ To install and run the code locally, follow these steps:
 git clone https://github.com/nikolasagl/teste-superfrete.git
 ```
 
-2. Navigate to the `functions` directory:
+2. Navigate to the `root` directory:
 
 ```bash
-cd teste-superfrete/functions
+cd teste-superfrete
 ```
 
 3. Install dependencies:
@@ -49,10 +49,10 @@ cd teste-superfrete/functions
 npm install
 ```
 
-4. Go back to the project root directory:
+4. Configure .env file:
 
 ```bash
-cd ..
+Paste the ".env" file inside root directory
 ```
 
 5. Set up Firebase CLI:
@@ -61,37 +61,25 @@ cd ..
 npm install -g firebase-tools
 ```
 
-6. Login to your Firebase account (optional):
-
-```bash
-firebase login
-```
-
-7. Set up Firebase project (optional):
-
-```bash
-firebase use --add
-```
-
-8. Run lint:
+6. Run lint:
 
 ```bash
 npm run lint
 ```
 
-9. Run tests:
+7. Run tests:
 
 ```bash
 npm run test
 ```
 
-10. Build:
+8. Build:
 
 ```bash
 npm run build
 ```
 
-11. Run Firebase emulators:
+9. Run Firebase emulators:
 
 ```bash
 firebase emulators:start
