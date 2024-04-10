@@ -1,31 +1,19 @@
 import * as admin from "firebase-admin";
 import {registerUser} from "@userFunctions/registerUser.function";
+require("dotenv").config();
 
 const express = require("express");
 const supertest = require("supertest");
 
-let serviceAccount;
-
-if (process.env.NODE_ENV === "production") {
-    const serviceAccountBase64 = process.env.FIREBASE_SERVICE_ACCOUNT_BASE64;
-    if (!serviceAccountBase64) {
-        throw new Error("The environment variable FIREBASE_SERVICE_ACCOUNT_BASE64 is not set.");
-    }
-    serviceAccount = JSON.parse(Buffer.from(serviceAccountBase64, "base64").toString("ascii"));
-} else {
-    serviceAccount = require("../../../../../../../teste-superfrete/service-account-file.json");
+const serviceAccountBase64 = process.env.FIREBASE_SERVICE_ACCOUNT_BASE64;
+if (!serviceAccountBase64) {
+    throw new Error("The environment variable FIREBASE_SERVICE_ACCOUNT_BASE64 is not set.");
 }
+const serviceAccount = JSON.parse(Buffer.from(serviceAccountBase64, "base64").toString("ascii"));
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
 });
-
-// if (process.env.USE_FIRESTORE_EMULATOR === "true") {
-//     admin.firestore().settings({
-//         host: "localhost:8080",
-//         ssl: false,
-//     });
-// }
 
 const testApp = express();
 testApp.use(express.json());
